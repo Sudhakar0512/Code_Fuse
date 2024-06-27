@@ -28,7 +28,7 @@ const EditorPage = () => {
       function handleErrors(e) {
         console.log("socket error", e);
         toast.error("Socket connection failed, try again later.");
-        reactNavigator("/home");
+        reactNavigator("/");
       }
 
       socketRef.current.emit(ACTIONS.JOIN, {
