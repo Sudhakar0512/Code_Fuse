@@ -9,17 +9,6 @@ const ACTIONS = require('./src/Actions');
 const server = http.createServer(app);
 // const io = new Server(server);
 
-const io = new Server(server, {
-    cors: {
-        origin: process.env.FRONTEND_URL, // Frontend URL
-        methods: ['GET', 'POST'],
-    },
-});
-
-app.use(cors({
-    origin: process.env.FRONTEND_URL,
-}));
-
 app.use(express.static('build'));
 
 app.use((req, res, next) => {
